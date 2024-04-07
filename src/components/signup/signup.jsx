@@ -64,7 +64,7 @@ const Signup = () => {
     });
     
     try {
-      const response = await axios.post('http://localhost:3001/signup', formDataToSend, {
+      const response = await axios.post('https://sportz-back.onrender.com/signup', formDataToSend, {
         headers: {
           'Content-Type': 'multipart/form-data' // Set content type for FormData
         }
