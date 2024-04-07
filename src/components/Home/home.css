@@ -15,6 +15,31 @@
     justify-content: center; /* Align content horizontally in the center */
     align-items: center; /* Align content vertically in the center */
 }
+.main {
+    position: relative;
+  }
+  
+  .chat-icon {
+    position: fixed;
+    bottom: 20px; /* Adjust the bottom position as needed */
+    right: 20px; /* Adjust the right position as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #ff0000, #000000); /* Gradient background color */
+    border-radius: 50%;
+    color: #fff; /* Icon color */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for depth */
+    z-index: 999; /* Ensure the icon is above other elements */
+    text-decoration: none; /* Remove default link underline */
+  }
+  
+  .chat-icon:hover {
+    background: linear-gradient(135deg, #0072ff, #00c6ff); /* Gradient background color on hover */
+  }
+  
 
 /* Content Styling */
 .content {
