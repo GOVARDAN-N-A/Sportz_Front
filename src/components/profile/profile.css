@@ -1,0 +1,35 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Utilize full page height */
+  text-align: center;
+}
+
+.profile-details {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Limit maximum width */
+  width: 90%; /* Take up 90% of available width */
+  font-size: 20px; /* Increase font size */
+}
+
+.profile-item {
+  margin-bottom: 10px;
+}
+
+.round-image {
+  border-radius: 50%;
+  width: 200px; /* Increase image size */
+  height: 200px; /* Increase image size */
+  margin-bottom: 20px;
+  border: 4px solid #fff; /* Add border around the image */
+}
+
+.loading-image {
+  width: 100px; /* Adjust width of loading image */
+  height: 100px; /* Adjust height of loading image */
+}

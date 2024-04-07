@@ -1,0 +1,56 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Main Section */
+.main {
+    background-image: url('../../assets/home4.jpeg');
+    background-position: center;
+    background-size: cover; /* Cover ensures the entire background is filled */
+    height: 100vh; /* Ensure the main section takes the full viewport height */
+    display: flex;
+    justify-content: center; /* Align content horizontally in the center */
+    align-items: center; /* Align content vertically in the center */
+}
+
+/* Content Styling */
+.content {
+    text-align: center; /* Center align content */
+    color: white; /* Set text color */
+}
+
+.content h1 {
+    color: rgb(255, 255, 255);
+    font-size: 3.5rem; /* Adjust heading size */
+    text-shadow: 0px 0px 10px gold;
+    margin-bottom: 25px; /* Add some space between heading and button */
+    margin-top: 80px;
+}
+
+.content h3 {
+    margin-bottom: 30px; /* Add space between h3 and button */
+}
+
+.content button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 24px; /* Increase padding for better button size */
+    font-size: 1.2rem; /* Increase button font size */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition on hover */
+}
+
+.content button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add subtle shadow on hover */
+}
+/* 
+span{
+    color:red;
+    text-shadow: none;
+} */
