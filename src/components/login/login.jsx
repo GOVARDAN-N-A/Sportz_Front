@@ -13,29 +13,31 @@ const Login = ({ setUserFullName }) => {
     };
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-      
-        try {
-            const response = await axios.post('https://sportz-back.onrender.com/login', formData);
-            if (response.data.message === 'Login successful') {
-                const { userFullName, userEmail } = response.data;
-                sessionStorage.setItem('isLoggedIn', 'true');
-                sessionStorage.setItem('userFullName', userFullName);
-                sessionStorage.setItem('userEmail', userEmail); // Store user email in sessionStorage
-                setUserFullName(userFullName);
-                // Fetch user profile data based on user email after successful login
-                const loggedInUserEmail = userEmail;
-                const profileResponse = await axios.get(`https://sportz-back.onrender.com/profile?userEmail=${loggedInUserEmail}`);
-                // Handle profile data as needed
-                console.log('User profile data:', profileResponse.data);
-                navigate('/'); // Redirect to home page after successful login
-            } else {
-                setError(response.data.message);
-            }
-        } catch (error) {
-            setError(error.response.data.message);
+    e.preventDefault();
+
+    try {
+        const response = await axios.post('https://sportz-back.onrender.com/login', formData);
+        if (response && response.data && response.data.message === 'Login successful') {
+            const { userFullName, userEmail } = response.data;
+            sessionStorage.setItem('isLoggedIn', 'true');
+            sessionStorage.setItem('userFullName', userFullName);
+            sessionStorage.setItem('userEmail', userEmail); // Store user email in sessionStorage
+            setUserFullName(userFullName);
+            // Fetch user profile data based on user email after successful login
+            const loggedInUserEmail = userEmail;
+            const profileResponse = await axios.get(`https://sportz-back.onrender.com/profile?userEmail=${loggedInUserEmail}`);
+            // Handle profile data as needed
+            console.log('User profile data:', profileResponse.data);
+            navigate('/'); // Redirect to home page after successful login
+        } else {
+            setError(response && response.data && response.data.message ? response.data.message : 'Login failed');
         }
-    };
+    } catch (error) {
+        console.error('Error during login:', error);
+        setError('Internal server error');
+    }
+};
+
     
     return (
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
